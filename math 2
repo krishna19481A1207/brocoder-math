@@ -1,0 +1,26 @@
+https://practice.geeksforgeeks.org/problems/primes-sum5827/1
+
+
+
+//User function Template for Java
+class Solution {
+    static String isSumOfTwo(int N){
+        // code here
+        
+    int n=N;
+    if(n>2 && n%2==0) return "Yes";
+    else if(isPrime(n-2)) return "Yes";
+    else return "No";
+    }
+    static boolean isPrime(int N ){
+        if(N<2){
+            return false;
+        }
+        for(int i=2; i<=Math.sqrt(N); i++){
+            if(N%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+}
