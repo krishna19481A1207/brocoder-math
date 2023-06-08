@@ -1,0 +1,80 @@
+https://practice.geeksforgeeks.org/problems/next-permutation5226/1
+
+
+
+// User function Template for Java
+
+class Solution{
+    static List<Integer> nextPermutation(int N, int arr[])
+    {
+        
+     int n=arr.length;
+        int k;
+        
+        List<Integer>al=new ArrayList<>();
+        for(k=n-2;k>=0;k--)
+        {
+            if(arr[k]<arr[k+1]) break;
+                    }
+        if(k==-1)
+        {
+            Arrays.sort(arr);
+            for(int i:arr) al.add(i);
+            
+            //al=Arrays.asList(arr);
+            
+            return al;
+        }
+        
+        for(int l=n-1;l>k;l--)
+        {
+            if(arr[l]>arr[k]) 
+            {
+            int temp=arr[k];
+            arr[k]=arr[l];
+            arr[l]=temp;
+            break;
+            }
+        }
+        
+        Arrays.sort(arr,k+1,n);
+        for(int i:arr) al.add(i);
+        
+       // al = Arrays.asList(arr);
+   //List al = Arrays.asList(geeks);
+        return al;
+    
+    }
+    
+}
+
+
+https://www.interviewbit.com/problems/next-similar-number/
+
+public class Solution {
+    public String solve(String A) {
+        char[] a = A.toCharArray();
+        int n=A.length();
+        int k;
+        for(k=n-2;k>=0;k--) if(a[k]<a[k+1]) break;
+                
+        if(k==-1) return "-1";
+        
+        
+        for(int l=n-1;l>k;l--)
+        {
+            if(a[l]>a[k]) 
+            {
+            char temp=a[k];
+            a[k]=a[l];
+            a[l]=temp;
+            break;
+            }
+        }
+        
+        Arrays.sort(a,k+1,n);
+        String b= new String(a);
+        return b;
+    }
+}
+
