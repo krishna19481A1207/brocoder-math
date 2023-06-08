@@ -1,0 +1,17 @@
+https://practice.geeksforgeeks.org/problems/missing-number-in-array1416/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
+
+
+
+// User function Template for Java
+
+class Solution {
+    int MissingNumber(int array[], int n) {
+        // Your Code Here
+       
+        int sum=Arrays.stream(array).sum();
+        int sum1=(n*(n+1))/2;
+        
+        return sum1-sum;
+        
+    }
+}
