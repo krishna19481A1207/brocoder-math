@@ -1,0 +1,32 @@
+https://leetcode.com/problems/unique-paths/
+
+class Solution {
+   static int nCr(int n, int r)
+    {
+        
+        int[] c= new int[n+1];
+        if(r>n) return 0;
+        for(int i=0;i<=n;i++) c[i]=0;
+        c[0]=1;
+        
+        for(int i=1;i<=n;i++)
+        { 
+            for(int j=Math.min(i,r);j>0;j--)
+                {
+                    c[j]=(c[j]+c[j-1])%2000000000;
+                }
+        }        
+        return c[r];
+        
+    }
+    public int uniquePaths(int m, int n) {
+        int d=m-1;
+        int r=n-1;
+        int s=d+r;
+        int ans;
+        
+        ans=nCr(s,d);
+
+        return ans;
+    }
+}
