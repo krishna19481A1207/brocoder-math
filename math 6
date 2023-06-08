@@ -1,0 +1,45 @@
+https://www.geeksforgeeks.org/find-two-missing-numbers-set-1-an-interesting-linear-time-solution/
+
+https://www.codingninjas.com/codestudio/problems/find-two-missing-numbers_1214700?leftPanelTab=1
+
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static ArrayList<Integer> findMissingNumbers(ArrayList<Integer> arr, int n) {
+		//Write your code here
+	   boolean[] visited = new boolean[n+1];
+	    for(int i=0;i<n-2;i++) 
+		{
+			visited[arr.get(i)]=true;
+		}
+ArrayList<Integer>l = new ArrayList<>();
+
+    
+	for (int i = 1; i <= n; i++)
+    {
+		if(!visited[i])
+		{
+            l.add(i);
+		}
+     }
+return l;
+}
+}
+/*
+boolean[] visited = new boolean[n+1];
+	    for(int i=0;i<n-2;i++) 
+		{
+			visited[arr.get(i)]=true;
+		}
+ArrayList<Integer>l = new ArrayList<>();
+
+    
+	for (int i = 1; i <= n; i++)
+    {
+		if(!visited[i])
+		{
+            l.add(i);
+		}
+     }
+return l;
+*/
